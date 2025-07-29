@@ -2,23 +2,23 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+use App\Models\Brand;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class CategorySeeder extends Seeder
+class BrandSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        for ($i = 0; $i < 5; $i++) {
-            $name = fake()->unique()->word();
+        for ($i = 0; $i < 10; $i++) {
+            $name = fake()->unique()->company();
 
-            Category::create([
-                'name' => ucfirst($name),
+            Brand::create([
+                'name' => $name,
                 'slug' => Str::slug($name),
                 'description' => fake()->sentence(),
             ]);
