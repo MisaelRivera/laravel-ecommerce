@@ -19,7 +19,7 @@ class OrderItemSeeder extends Seeder
         $products = Product::pluck('id')->toArray();
 
         foreach($orders as $order) {
-            $numItems = fake()->numberBetween(1, 5);
+            $numItems = fake()->numberBetween(5, 10);
             $total = 0;
 
             for ($i = 0; $i < $numItems; $i++) {
